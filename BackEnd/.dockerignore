@@ -1,0 +1,12 @@
+# Ignore development specific files and directories
+node_modules
+.husky
+.env
+.dockerignore
+.docker
+.git
+.gitignore
+package-lock.json
+database.sqlite
+
+# Ignore any other files or directories as needed

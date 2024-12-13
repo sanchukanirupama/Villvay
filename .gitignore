@@ -1,0 +1,54 @@
+# Node.js and Next.js
+BackEnd/node_modules/
+FrontEnd/node_modules/
+
+# Next.js build output
+FrontEnd/.next/
+FrontEnd/out/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# Build directories
+BackEnd/dist/
+BackEnd/build/
+FrontEnd/dist/
+FrontEnd/build/
+
+# Dependency directories (for Yarn and npm)
+BackEnd/package-lock.json
+FrontEnd/package-lock.json
+BackEnd/yarn.lock
+FrontEnd/yarn.lock
+BackEnd/pnpm-lock.yaml
+FrontEnd/pnpm-lock.yaml
+
+# TypeScript
+BackEnd/*.tsbuildinfo
+FrontEnd/*.tsbuildinfo
+
+BackEnd/database.sqlite
