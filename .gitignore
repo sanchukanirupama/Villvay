@@ -40,8 +40,8 @@ FrontEnd/dist/
 FrontEnd/build/
 
 # Dependency directories (for Yarn and npm)
-BackEnd/package-lock.json
-FrontEnd/package-lock.json
+# BackEnd/package-lock.json
+# FrontEnd/package-lock.json
 BackEnd/yarn.lock
 FrontEnd/yarn.lock
 BackEnd/pnpm-lock.yaml
