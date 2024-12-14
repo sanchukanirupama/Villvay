@@ -30,10 +30,10 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         </div>
       </header>
       <main className="flex max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 gap-4">
-        <div className="w-1/2 bg-white shadow p-4 rounded">
+        <div className="section w-full md:w-1/2 bg-white shadow p-4 rounded animate-slide-up">
           {children}
         </div>
-        <div className="w-1/2 bg-white shadow p-4 rounded">
+        <div className="section w-full md:w-1/2 bg-white shadow p-4 rounded animate-slide-up">
           <RoleUpdateComponent />
         </div>
       </main>
