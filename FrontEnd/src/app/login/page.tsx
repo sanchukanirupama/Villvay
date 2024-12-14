@@ -18,7 +18,6 @@ export default function LoginPage() {
     try {
       const data: AuthResponse = await signIn(email, password)
       if (data.status) {
-        debugger
         localStorage.setItem('accessToken', data.accessToken)
         localStorage.setItem('userRole', data.data.role)
         localStorage.setItem('email', data.data.email)

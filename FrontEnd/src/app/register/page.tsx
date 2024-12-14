@@ -69,7 +69,11 @@ export default function RegisterPage() {
         </div>
         <div className="space-y-2">
           <Label>Role</Label>
-          <RadioGroup value={role} onValueChange={setRole}>
+          <RadioGroup
+            value={role}
+            onValueChange={setRole}
+            className="flex items-center space-x-4"
+          >
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="ADMIN" id="admin" />
               <Label htmlFor="admin">Admin</Label>

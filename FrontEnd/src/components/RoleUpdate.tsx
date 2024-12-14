@@ -28,7 +28,6 @@ export default function RoleUpdateComponent() {
 
         const userRole = localStorage.getItem("userRole");
         const userEmail = localStorage.getItem("email");
-        debugger
 
         if (userEmail === data?.data?.email && userRole != data?.data.role) {
           localStorage.removeItem("accessToken");
@@ -56,7 +55,7 @@ export default function RoleUpdateComponent() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center p-24">
       <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold">Update User Roles</h1>
+        <h1 className="text-2xl font-bold">Update User Role</h1>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <Input
@@ -70,7 +69,11 @@ export default function RoleUpdateComponent() {
 
         <div className="space-y-2">
           <Label>Role</Label>
-          <RadioGroup value={role} onValueChange={setRole}>
+          <RadioGroup
+            value={role}
+            onValueChange={setRole}
+            className="flex items-center space-x-4"
+          >
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="ADMIN" id="admin" />
               <Label htmlFor="admin">Admin</Label>
