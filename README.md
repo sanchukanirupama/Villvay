@@ -1,46 +1,90 @@
 # Villvay Assessment
 
 ## Overview
+This project demonstrates a comprehensive approach to authentication and authorization with a focus on role-based access control, API accessibility based on roles, dynamic role assignments, and role-based redirection. It includes the following key features:
 
-Welcome to the Villvay Assessment project! This application is designed to allow users with different roles (Admin, User, Guest) to authenticate and access specific endpoints based on their roles. It is fully containerized using Docker, making it easy to clone and set up for local development.
-
-### Features:
-- **Role-based Access Control**: The application has 3 roles (Admin, User, Guest) with different levels of access.
-- **Role-Specific Endpoints**: Each role has specific endpoints they can access.
-- **Easy Setup**: The app is fully containerized with Docker, and you can get it up and running with a single command.
-- **Role Update**: Admin users can update the roles of other users.
+### Features
+- **Role-Based Access Control**: Supports three roles—Admin, User, and Guest—each with defined access levels.
+- **Role-Specific API Endpoints**: Dedicated API endpoints tailored to each role.
+- **Simple Deployment**: Fully containerized with Docker for a seamless setup using a single command.
 
 ## Getting Started
 
-To get started with the project, follow these steps:
+Follow these steps to set up and run the project:
 
+### Using Docker (Recommended)
 1. **Clone the repository**:
     ```bash
     git clone <repo_url>
     cd <project_directory>
     ```
 
-2. **Build and start the application with Docker**:
+2. **Build and start the application**:
     ```bash
     docker-compose up --build
     ```
 
-3. **Register as a user**:
-    - You can register as an Admin, User, or Guest by filling out the registration form in the application.
+3. Alternatively, use the Makefile command:
+    ```bash
+    make up
+    ```
 
-4. **Login**:
-    - Once registered, log in with the credentials for your selected role.
+4. Access the application and interact with its features, such as registering users, logging in, and managing roles.
 
-5. **Test the API Endpoints**:
-    After logging in, you can test the following API endpoints based on your logged-in role:
+---
 
-    - `GET /api/public`: Accessible to everyone, no authentication required.
-    - `GET /api/user-data`: Accessible only to authenticated users with the **USER** or **ADMIN** role.
-    - `GET /api/admin-data`: Accessible only to authenticated users with the **ADMIN** role.
-    - `GET /api/guest-data`: Accessible only to authenticated users with the **GUEST** role.
+### Running Backend and Frontend Separately
 
-6. **Update User Roles**:
-    On the right side of the application interface, you will see a form that allows you to update the roles of users. Only **Admin** users can modify roles.
+If you prefer to run the backend and frontend independently without Docker:
+
+1. **Backend Setup**:
+    - Navigate to the backend folder:
+      ```bash
+      cd <project_directory>/backend
+      ```
+    - Install dependencies:
+      ```bash
+      npm install
+      ```
+    - Start the backend server:
+      ```bash
+      npm run dev
+      ```
+
+2. **Frontend Setup**:
+    - Navigate to the frontend folder:
+      ```bash
+      cd <project_directory>/frontend
+      ```
+    - Install dependencies:
+      ```bash
+      npm install
+      ```
+    - Start the frontend server:
+      ```bash
+      npm run dev
+      ```
+
+Now, the backend and frontend servers will run independently, and you can access the application through your browser.
+
+---
+
+### Register as a User
+- You can register as an Admin, User, or Guest by filling out the registration form in the application.
+
+### Login
+- Once registered, log in with the credentials for your selected role.
+
+### Test the API Endpoints
+After logging in, you can test the following API endpoints based on your logged-in role:
+
+- `GET /api/public`: Accessible to everyone, no authentication required.
+- `GET /api/user-data`: Accessible only to authenticated users with the **USER** or **ADMIN** role.
+- `GET /api/admin-data`: Accessible only to authenticated users with the **ADMIN** role.
+- `GET /api/guest-data`: Accessible only to authenticated users with the **GUEST** role.
+
+### Update User Roles
+On the right side of the application interface, you will see a form that allows you to update the roles of users. Only **Admin** users can modify roles.
 
 ## Technologies Used
 
@@ -49,14 +93,13 @@ To get started with the project, follow these steps:
 - **Docker** - Containerization for easy deployment and scaling.
 - **SQLite** - Lightweight SQL database to store user data and other application information.
 
-## Roles and Permissions
 
-- **Admin**: Can access all endpoints, manage user roles, and modify system settings.
-- **User**: Can access user data and public endpoints but cannot access admin-specific data.
-- **Guest**: Can only access the public endpoint.
-
-## Conclusion
-
-This project showcases how to implement role-based access control in a web application. By running this project, you can learn how roles and permissions are applied in a real-world application.
-
-Feel free to clone and try it out! If you have any questions or feedback, feel free to open an issue.
+## API Endpoints
+- **Public Endpoint**: 
+  - `GET /api/public`: Accessible to everyone, no authentication required.
+- **User Endpoint**:
+  - `GET /api/user-data`: Accessible only to authenticated users with the **USER** or **ADMIN** role.
+- **Admin Endpoint**:
+  - `GET /api/admin-data`: Accessible only to authenticated users with the **ADMIN** role.
+- **Guest Endpoint**:
+  - `GET /api/guest-data`: Accessible only to authenticated users with the **GUEST** role.
